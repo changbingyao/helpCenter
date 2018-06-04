@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2 @click="handleClick">Essential Links</h2>
+    <div id="test">content</div>
     <ul>
       <li>
         <a
@@ -89,6 +90,13 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods:{
+    handleClick:function(){
+      console.log($('#test'));
+      var domContent = $('#test').html();
+      console.log(domContent);
     }
   }
 }
